@@ -4,7 +4,6 @@ import java.io.Serializable;
 import java.util.List;
 
 import org.hibernate.Criteria;
-import org.hibernate.JDBCException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Criterion;
@@ -25,7 +24,8 @@ public abstract class GenericDaoImpl<E, I extends Serializable> implements Abstr
         return sessionFactory.getCurrentSession();
     }
 
-    public E findById(Integer id) {
+    @Override
+	public E findById(Integer id) {
     	getCurrentSession().beginTransaction();
     	E e = (E) getCurrentSession().get(entityClass, id);
     	getCurrentSession().getTransaction().commit();
@@ -33,7 +33,8 @@ public abstract class GenericDaoImpl<E, I extends Serializable> implements Abstr
         return e;
     }
     
-    public List<E> findAll() {
+    @Override
+	public List<E> findAll() {
     	getCurrentSession().beginTransaction();
     	List<E> list = getCurrentSession().createQuery( "from " + entityClass.getName() ).list(); 
     	getCurrentSession().getTransaction().commit();
@@ -41,13 +42,15 @@ public abstract class GenericDaoImpl<E, I extends Serializable> implements Abstr
         return list; 
      }
 
-    public void saveOrUpdate(E e) {
+    @Override
+	public void saveOrUpdate(E e) {
     	getCurrentSession().beginTransaction();
         getCurrentSession().saveOrUpdate(e);
         getCurrentSession().getTransaction().commit();
     }
     
-    public void saveOrUpdateAll(List<E> list) {
+    @Override
+	public void saveOrUpdateAll(List<E> list) {
     	
     	getCurrentSession().beginTransaction();
     	
@@ -58,7 +61,8 @@ public abstract class GenericDaoImpl<E, I extends Serializable> implements Abstr
     	getCurrentSession().getTransaction().commit();
     }
 
-    public void delete(E e) {
+    @Override
+	public void delete(E e) {
 	    getCurrentSession().beginTransaction();
 	    
 	    try {
@@ -72,7 +76,8 @@ public abstract class GenericDaoImpl<E, I extends Serializable> implements Abstr
 	    }
     }
 
-    public E findByCriteria(Criterion criterion) {
+    @Override
+	public E findByCriteria(Criterion criterion) {
     	getCurrentSession().beginTransaction();
         Criteria criteria = getCurrentSession().createCriteria(entityClass);
         criteria.add(criterion);
@@ -86,7 +91,7 @@ public abstract class GenericDaoImpl<E, I extends Serializable> implements Abstr
     	getCurrentSession().beginTransaction();
         Criteria criteria = getCurrentSession().createCriteria(entityClass);
         criteria.add(criterion);
-        List<E> e = (List<E>)criteria.list();
+        List<E> e = criteria.list();
         getCurrentSession().getTransaction().commit();
         
         return e;

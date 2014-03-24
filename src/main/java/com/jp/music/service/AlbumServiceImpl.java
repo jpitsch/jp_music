@@ -49,7 +49,7 @@ public class AlbumServiceImpl implements AlbumService {
 
 	@Override
 	public List<Album> findAllAlbums() {
-		return (List<Album>) albumDao.findAll();
+		return albumDao.findAll();
 	}
 
 	@Override

@@ -22,8 +22,6 @@ import org.hibernate.annotations.CascadeType;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
-import com.jp.music.models.ImportFile.FileType;
-
 @Entity
 @Table(name="ng_singers")
 public class Singer {
