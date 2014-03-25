@@ -1,4 +1,4 @@
-package com.jp.music.service;
+package com.jp.music.utility;
 
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -13,11 +13,11 @@ import com.jp.music.models.RecordCompany;
 import com.jp.music.models.Singer;
 import com.jp.music.models.User;
 
-public class FileImportServiceImpl {
+public class FileImporter {
 	
 	public final String DATE_FORMAT = "yyyyMMdd";
 	
-	public FileImportServiceImpl() {
+	public FileImporter() {
 		
 	}
 	
@@ -131,8 +131,8 @@ public class FileImportServiceImpl {
 				
 				for(String[] line : fileList) {
 					User u = new User();
-					u.setUserName(line[0].trim());
-					u.setUserPass(line[1].trim());
+					u.setUsername(line[0].trim());
+					u.setPassword(line[1].trim());
 					
 					users.add(u);
 				}

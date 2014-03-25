@@ -23,7 +23,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
 @Entity
-@Table(name="ng_singers")
+@Table(name="singers")
 public class Singer {
 	
 	public enum Sex {
@@ -31,7 +31,7 @@ public class Singer {
 	}
 	
 	@Id
-	@Column(name="NG_SINGERS_ID")
+	@Column(name="SINGERS_ID")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer singerId;
 	

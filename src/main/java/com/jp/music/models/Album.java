@@ -12,16 +12,16 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
-@Table(name="ng_albums")
+@Table(name="albums")
 public class Album {
 	
 	@Id
-	@Column(name="NG_ALBUMS_ID")
+	@Column(name="ALBUMS_ID")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer albumId;
 	
 	@ManyToOne
-	@JoinColumn(name="NG_SINGERS_ID")
+	@JoinColumn(name="SINGERS_ID")
 	@NotNull
 	private Singer singer;
 	

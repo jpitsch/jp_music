@@ -1,5 +1,7 @@
 package com.jp.music.models;
 
+import java.util.Collection;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,63 +11,89 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
 @Entity
-@Table(name="ng_users")
-public class User {
+@Table(name="users")
+public class User implements UserDetails {
 	
 	@Id
-	@Column(name="NG_USERS_ID")
+	@Column(name="USERS_ID")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer userId;
 	
 	@Column(name="USERNAME")
 	@NotNull @Size(min=2, max=20)
-	private String userName;
+	private String username;
 	
 	@Column(name="PASSWORD")
 	@NotNull @Size(min=2, max=20)
-	private String userPass;
+	private String password;
 	
-//	private String roles;
+	@Column(name="ROLE")
+	public Role role;
 	
 	public User() {
+		
 	}
-	
-//	public User(String userName, String userPass, String roles) {
-//		 this.userName = userName;
-//	     this.userPass = userPass;
-//	     this.roles = roles;
-//	}
 
 	public int getUserId() {
 		return userId;
 	}
 
-	public void setUserId(int userId) {
+	public void setUserId(Integer userId) {
 		this.userId = userId;
 	}
 
-	public String getUserName() {
-		return userName;
+	@Override
+	public Collection<? extends GrantedAuthority> getAuthorities() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
-
-	public String getUserPass() {
-		return userPass;
-	}
-
-	public void setUserPass(String userPass) {
-		this.userPass = userPass;
+	@Override
+	public String getPassword() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
-//	public String getRoles() {
-//		return roles;
-//	}
-//
-//	public void setRoles(String roles) {
-//		this.roles = roles;
-//	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	@Override
+	public String getUsername() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	@Override
+	public boolean isAccountNonExpired() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean isAccountNonLocked() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean isCredentialsNonExpired() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean isEnabled() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	
 }

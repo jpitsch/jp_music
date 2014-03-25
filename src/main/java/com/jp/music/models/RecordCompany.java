@@ -17,11 +17,11 @@ import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.CascadeType;
 
 @Entity
-@Table(name="ng_recordcompany")
+@Table(name="recordcompany")
 public class RecordCompany {
 	
 	@Id
-	@Column(name="NG_RECORD_COMPANY_ID")
+	@Column(name="RECORD_COMPANY_ID")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer recordCompanyId;
 	

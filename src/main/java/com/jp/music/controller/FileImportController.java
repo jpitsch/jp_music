@@ -23,10 +23,10 @@ import com.jp.music.models.Singer;
 import com.jp.music.models.User;
 import com.jp.music.models.ImportFile.FileType;
 import com.jp.music.service.AlbumService;
-import com.jp.music.service.FileImportServiceImpl;
 import com.jp.music.service.RecordCompanyService;
 import com.jp.music.service.SingerService;
 import com.jp.music.service.UserService;
+import com.jp.music.utility.FileImporter;
 import com.jp.music.validator.FileValidator;
 
 @Controller
@@ -77,7 +77,7 @@ public class FileImportController {
 			return "import/import";
 		}
 		
-		FileImportServiceImpl fileImportService = new FileImportServiceImpl();
+		FileImporter fileImportService = new FileImporter();
 		
 		if(importFile.getFileType() == FileType.ALBUM) {
 			List<Album> albumList = fileImportService.createAlbumList(fileList);
@@ -141,7 +141,7 @@ public class FileImportController {
 			List<User> userList = fileImportService.createUserList(fileList);
 			
 			for(User u : userList) {
-				User existing = userService.findUserByName(u.getUserName());
+				User existing = userService.findUserByName(u.getUsername());
 				
 				if(existing != null) {
 					continue;
