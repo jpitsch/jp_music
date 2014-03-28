@@ -11,7 +11,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
 @Configuration
-@ComponentScan(basePackages = { "com.jp.music.controller" })
+@ComponentScan(basePackages = { "com.jp.music.*.controller" })
 @EnableWebMvc
 public class WebApplicationContext extends WebMvcConfigurerAdapter {
 //	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
