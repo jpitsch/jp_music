@@ -1,4 +1,4 @@
-package com.jp.music.service;
+package com.jp.music.singer.service;
 
 import java.util.List;
 
@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.jp.music.dao.SingerDao;
-import com.jp.music.models.Singer;
+import com.jp.music.singer.model.Singer;
 
 @Service("singerService")
 @Transactional(readOnly = true)

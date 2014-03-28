@@ -7,7 +7,7 @@ import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.jp.music.models.Singer;
+import com.jp.music.singer.model.Singer;
 
 @Repository
 public class SingerDaoImpl extends GenericDaoImpl<Singer, String> implements SingerDao {

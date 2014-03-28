@@ -3,7 +3,7 @@ package com.jp.music.dao;
 import java.io.Serializable;
 import java.util.List;
 
-import com.jp.music.models.Album;
+import com.jp.music.album.model.Album;
 
 public interface AlbumDao extends AbstractDao<Album, Serializable> {
 	void saveAlbum(Album album);

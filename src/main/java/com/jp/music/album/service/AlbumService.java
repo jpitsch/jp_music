@@ -1,8 +1,8 @@
-package com.jp.music.service;
+package com.jp.music.album.service;
 
 import java.util.List;
 
-import com.jp.music.models.Album;
+import com.jp.music.album.model.Album;
 
 public interface AlbumService {
 	Album findAlbumById(Integer id);

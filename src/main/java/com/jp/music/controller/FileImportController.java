@@ -16,16 +16,16 @@ import org.springframework.web.multipart.MultipartFile;
 
 import au.com.bytecode.opencsv.CSVReader;
 
-import com.jp.music.models.Album;
-import com.jp.music.models.ImportFile;
-import com.jp.music.models.RecordCompany;
-import com.jp.music.models.Singer;
-import com.jp.music.models.User;
-import com.jp.music.models.ImportFile.FileType;
-import com.jp.music.service.AlbumService;
-import com.jp.music.service.RecordCompanyService;
-import com.jp.music.service.SingerService;
+import com.jp.music.album.model.Album;
+import com.jp.music.album.service.AlbumService;
+import com.jp.music.imports.model.ImportFile;
+import com.jp.music.imports.model.ImportFile.FileType;
+import com.jp.music.recordcompany.model.RecordCompany;
+import com.jp.music.recordcompany.service.RecordCompanyService;
 import com.jp.music.service.UserService;
+import com.jp.music.singer.model.Singer;
+import com.jp.music.singer.service.SingerService;
+import com.jp.music.user.model.User;
 import com.jp.music.utility.FileImporter;
 import com.jp.music.validator.FileValidator;
 

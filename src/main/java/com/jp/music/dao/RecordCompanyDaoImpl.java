@@ -4,7 +4,7 @@ import org.hibernate.criterion.MatchMode;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 
-import com.jp.music.models.RecordCompany;
+import com.jp.music.recordcompany.model.RecordCompany;
 
 @Repository
 public class RecordCompanyDaoImpl extends GenericDaoImpl<RecordCompany, String> implements RecordCompanyDao {

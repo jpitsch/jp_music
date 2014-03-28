@@ -1,8 +1,8 @@
-package com.jp.music.service;
+package com.jp.music.singer.service;
 
 import java.util.List;
 
-import com.jp.music.models.Singer;
+import com.jp.music.singer.model.Singer;
 
 public interface SingerService {
 	Singer findSingerById(Integer id);

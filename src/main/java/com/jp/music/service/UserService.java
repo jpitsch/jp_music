@@ -2,7 +2,7 @@ package com.jp.music.service;
 
 import java.util.List;
 
-import com.jp.music.models.User;
+import com.jp.music.user.model.User;
 
 public interface UserService {
 	User findUserById(Integer id);

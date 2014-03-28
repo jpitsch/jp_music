@@ -4,7 +4,7 @@ import org.hibernate.criterion.MatchMode;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 
-import com.jp.music.models.User;
+import com.jp.music.user.model.User;
 
 @Repository
 public class UserDaoImpl extends GenericDaoImpl<User, String> implements UserDao {

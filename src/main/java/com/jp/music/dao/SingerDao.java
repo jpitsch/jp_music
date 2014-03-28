@@ -2,7 +2,7 @@ package com.jp.music.dao;
 
 import java.io.Serializable;
 
-import com.jp.music.models.Singer;
+import com.jp.music.singer.model.Singer;
 
 public interface SingerDao extends AbstractDao<Singer, Serializable> {
 	void saveSinger(Singer singer);

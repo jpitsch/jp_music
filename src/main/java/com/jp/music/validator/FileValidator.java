@@ -3,7 +3,7 @@ package com.jp.music.validator;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
-import com.jp.music.models.ImportFile;
+import com.jp.music.imports.model.ImportFile;
 
 public class FileValidator implements Validator {
 

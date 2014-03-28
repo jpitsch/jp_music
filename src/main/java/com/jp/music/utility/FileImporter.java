@@ -8,10 +8,10 @@ import java.util.List;
 
 import org.springframework.util.CollectionUtils;
 
-import com.jp.music.models.Album;
-import com.jp.music.models.RecordCompany;
-import com.jp.music.models.Singer;
-import com.jp.music.models.User;
+import com.jp.music.album.model.Album;
+import com.jp.music.recordcompany.model.RecordCompany;
+import com.jp.music.singer.model.Singer;
+import com.jp.music.user.model.User;
 
 public class FileImporter {
 	

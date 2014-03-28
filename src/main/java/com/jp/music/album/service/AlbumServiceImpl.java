@@ -1,4 +1,4 @@
-package com.jp.music.service;
+package com.jp.music.album.service;
 
 import java.util.List;
 
@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.jp.music.album.model.Album;
 import com.jp.music.dao.AlbumDao;
-import com.jp.music.models.Album;
 
 @Service("albumService")
 @Transactional

@@ -7,7 +7,7 @@ import org.hibernate.criterion.MatchMode;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 
-import com.jp.music.models.Album;
+import com.jp.music.album.model.Album;
 
 @Repository
 public class AlbumDaoImpl extends GenericDaoImpl<Album, Serializable> implements AlbumDao {

@@ -1,4 +1,4 @@
-package com.jp.music.controller;
+package com.jp.music.common.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -1,4 +1,4 @@
-package com.jp.music.models;
+package com.jp.music.common.model;
 
 public enum Role {
 	ROLE_USER,

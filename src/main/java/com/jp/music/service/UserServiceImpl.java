@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.jp.music.dao.UserDao;
-import com.jp.music.models.User;
+import com.jp.music.user.model.User;
 
 @Service("userService")
 @Transactional(readOnly = true)

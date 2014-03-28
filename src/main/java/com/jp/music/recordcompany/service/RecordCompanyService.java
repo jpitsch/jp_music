@@ -1,8 +1,8 @@
-package com.jp.music.service;
+package com.jp.music.recordcompany.service;
 
 import java.util.List;
 
-import com.jp.music.models.RecordCompany;
+import com.jp.music.recordcompany.model.RecordCompany;
 
 public interface RecordCompanyService {
 	RecordCompany findRecordCompanyById(Integer id);

@@ -1,4 +1,4 @@
-package com.jp.music.models;
+package com.jp.music.recordcompany.model;
 
 import java.util.List;
 
@@ -15,6 +15,8 @@ import javax.validation.constraints.Size;
 
 import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.CascadeType;
+
+import com.jp.music.album.model.Album;
 
 @Entity
 @Table(name="recordcompany")

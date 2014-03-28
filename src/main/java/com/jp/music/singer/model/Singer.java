@@ -1,4 +1,4 @@
-package com.jp.music.models;
+package com.jp.music.singer.model;
 
 
 import java.util.Date;
@@ -21,6 +21,8 @@ import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.CascadeType;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.ModelAttribute;
+
+import com.jp.music.album.model.Album;
 
 @Entity
 @Table(name="singers")

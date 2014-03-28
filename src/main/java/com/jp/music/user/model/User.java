@@ -1,4 +1,4 @@
-package com.jp.music.models;
+package com.jp.music.user.model;
 
 import java.util.Collection;
 
@@ -13,6 +13,8 @@ import javax.validation.constraints.Size;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+
+import com.jp.music.common.model.Role;
 
 @Entity
 @Table(name="users")

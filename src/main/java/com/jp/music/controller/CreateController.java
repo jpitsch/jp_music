@@ -19,14 +19,14 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.jp.music.models.Album;
-import com.jp.music.models.RecordCompany;
-import com.jp.music.models.Singer;
-import com.jp.music.models.User;
-import com.jp.music.service.AlbumService;
-import com.jp.music.service.RecordCompanyService;
-import com.jp.music.service.SingerService;
+import com.jp.music.album.model.Album;
+import com.jp.music.album.service.AlbumService;
+import com.jp.music.recordcompany.model.RecordCompany;
+import com.jp.music.recordcompany.service.RecordCompanyService;
 import com.jp.music.service.UserService;
+import com.jp.music.singer.model.Singer;
+import com.jp.music.singer.service.SingerService;
+import com.jp.music.user.model.User;
 
 @Controller
 public class CreateController {
@@ -169,8 +169,6 @@ public class CreateController {
 	@InitBinder
 	public void initBinder(WebDataBinder binder) {
 		SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
- 
 		binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, true));
- 
 	}
 }
