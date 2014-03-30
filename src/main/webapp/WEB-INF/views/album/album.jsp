@@ -2,7 +2,7 @@
 <html>
 <body>
 	<h2>Album Manager</h2>
-	<form:form method="post" action="/music/create-album.htm" commandName="album">
+	<form:form method="post" action="/music/album/create.htm" commandName="album">
 		<table>
 			<tr>
 				<td><form:label path="albumName">Album Name:</form:label></td>
@@ -20,7 +20,7 @@
 					</form:select>
 				</td>
 				<td>
-					<a href="/music/singer.htm">New Singer</a>
+					<a href="/music/singer/">New Singer</a>
 				</td>
 				<td><form:errors path="singer" class="error" /></td>
 			</tr>
@@ -40,7 +40,7 @@
 					</form:select>
 				</td>
 				<td>
-					<a href="/music/record-company.htm">New Record Company</a>
+					<a href="/music/recordcompany/">New Record Company</a>
 				</td>
 				<td><form:errors path="recordCompany" class="error" /></td>
 			</tr>
@@ -73,7 +73,7 @@
 					<td>${album.singer.name}</td>
 					<td>${album.releaseYear}</td>
 					<td>${album.recordCompany.recordCompanyName}</td>
-					<td><a href="delete-album/${album.albumId}">delete</a></td>
+					<td><a href="/music/album/delete/${album.albumId}">delete</a></td>
 				</tr>
 			</c:forEach>
 		</table>

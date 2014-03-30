@@ -11,10 +11,14 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBean;
+import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 //@PropertySource("classpath*:*database.properties")
+@EnableTransactionManagement
 public class PersistanceContext {
 	
 	@Value("${jdbc.driver}") String driverClass;
@@ -52,19 +56,28 @@ public class PersistanceContext {
 		LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
 		sessionFactory.setDataSource(this.dataSource());
 		sessionFactory.setPackagesToScan("com.jp.music.*.model");
+		sessionFactory.setHibernateProperties(this.hibernateProperties());
 		
 		return sessionFactory;
 	}
 	
+	 @Bean
+	 public PlatformTransactionManager transactionManager() throws Exception {
+		 HibernateTransactionManager transactionManager = new HibernateTransactionManager();
+		 transactionManager.setSessionFactory(sessionFactory().getObject());
+		 return transactionManager;
+	 }
+	
 	final Properties hibernateProperties() {
         return new Properties() {
             {
-                this.put("hibernate.dialect", org.hibernate.dialect.MySQLDialect.getDialect());
-                this.put("hibernate.show_sql", true);
+                this.put("hibernate.dialect", "org.hibernate.dialect.MySQLDialect");
+                this.put("hibernate.show_sql", "true");
                 this.put("hibernate.current_session_context_class", "thread");
             }
         };
     }
+	
 	
 //	   <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 //  <property name="locations">

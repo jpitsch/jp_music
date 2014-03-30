@@ -2,7 +2,7 @@
 <html>
 <body>
 	<h2>Singer Manager</h2>
-	<form:form method="post" action="/music/create-singer.htm" commandName="singer">
+	<form:form method="post" action="/music/singer/create.htm" commandName="singer">
 		<table>
 			<tr>
 				<td><form:label path="name">Name:</form:label></td>
@@ -43,7 +43,7 @@
 					<td>${singer.name}</td>
 					<td>"${singer.dateOfBirth}"</td>
 					<td>${singer.sex}</td>
-					<td><a href="delete-singer/${singer.singerId}">delete</a></td>
+					<td><a href="music/singer/delete/${singer.singerId}">delete</a></td>
 				</tr>
 			</c:forEach>
 		</table>

@@ -2,7 +2,7 @@
 <html>
 <body>
 	<h2>Record Company Manager</h2>
-	<form:form method="post" action="/music/create-record-company.htm" commandName="recordCompany">
+	<form:form method="post" action="/music/recordcompany/create.htm" commandName="recordCompany">
 		<table>
 			<tr>
 				<td><form:label path="recordCompanyName">Company Name:</form:label></td>
@@ -32,7 +32,7 @@
 			<c:forEach items="${recordCompanyList}" var="company">
 				<tr>
 					<td>${company.recordCompanyName}</td>
-					<td><a href="/music/delete-record-company/${company.recordCompanyId}">delete</a></td>
+					<td><a href="/music/recordcompany/delete/${company.recordCompanyId}">delete</a></td>
 				</tr>
 			</c:forEach>
 		</table>

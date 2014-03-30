@@ -2,7 +2,7 @@
 <html>
 <body>
 	<h2>User Manager</h2>
-	<form:form method="post" action="/music/create-user.htm" commandName="user">
+	<form:form method="post" action="/music/user/create.htm" commandName="user">
 		<table>
 			<tr>
 				<td><form:label path="userName">Name:</form:label></td>
@@ -37,7 +37,7 @@
 				<tr>
 					<td><c:out value="${user.userName}" /></td>
 					<td>${user.userPass}</td>
-					<td><a href="delete-user/${user.userId}">delete</a></td>
+					<td><a href="/music/user/delete/${user.userId}">delete</a></td>
 				</tr>
 			</c:forEach>
 		</table>
