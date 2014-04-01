@@ -6,7 +6,7 @@
 </head>
 <body>
 <h1>
-	Welcome to NG Music  
+	Welcome to JP Music  
 </h1>
 <div>
 	<P>  Your one stop shop for all your music knowledge! </P>

@@ -18,14 +18,14 @@ import au.com.bytecode.opencsv.CSVReader;
 
 import com.jp.music.album.model.Album;
 import com.jp.music.album.service.AlbumService;
-import com.jp.music.imports.model.ImportFile;
-import com.jp.music.imports.model.ImportFile.FileType;
+import com.jp.music.fileimport.model.ImportFile;
+import com.jp.music.fileimport.model.ImportFile.FileType;
 import com.jp.music.recordcompany.model.RecordCompany;
 import com.jp.music.recordcompany.service.RecordCompanyService;
-import com.jp.music.service.UserService;
 import com.jp.music.singer.model.Singer;
 import com.jp.music.singer.service.SingerService;
 import com.jp.music.user.model.User;
+import com.jp.music.user.service.UserService;
 import com.jp.music.utility.FileImporter;
 import com.jp.music.validator.FileValidator;
 

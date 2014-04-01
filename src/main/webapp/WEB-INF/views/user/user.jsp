@@ -5,14 +5,14 @@
 	<form:form method="post" action="/music/user/create.htm" commandName="user">
 		<table>
 			<tr>
-				<td><form:label path="userName">Name:</form:label></td>
-				<td><form:input path="userName"/></td>
-				<td><form:errors path="userName" class="error" /></td>
+				<td><form:label path="username">Name:</form:label></td>
+				<td><form:input path="username"/></td>
+				<td><form:errors path="username" class="error" /></td>
 			</tr>
 			<tr>
-				<td><form:label path="userPass">Password:</form:label></td>
-				<td><form:input path="userPass" placeholder="******" /></td>
-				<td><form:errors path="userPass" class="error" /></td>
+				<td><form:label path="password">Password:</form:label></td>
+				<td><form:input path="password" placeholder="******" /></td>
+				<td><form:errors path="password" class="error" /></td>
 			</tr>
 			<tr>
 				<td colspan="2">
@@ -35,8 +35,8 @@
 			</tr>
 			<c:forEach items="${userList}" var="user">
 				<tr>
-					<td><c:out value="${user.userName}" /></td>
-					<td>${user.userPass}</td>
+					<td><c:out value="${user.username}" /></td>
+					<td>${user.password}</td>
 					<td><a href="/music/user/delete/${user.userId}">delete</a></td>
 				</tr>
 			</c:forEach>

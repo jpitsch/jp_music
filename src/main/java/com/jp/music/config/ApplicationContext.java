@@ -5,13 +5,18 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ImportResource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
+import org.springframework.format.datetime.DateFormatter;
+import org.springframework.format.datetime.DateFormatterRegistrar;
+import org.springframework.format.number.NumberFormatAnnotationFormatterFactory;
+import org.springframework.format.support.DefaultFormattingConversionService;
+import org.springframework.format.support.FormattingConversionService;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
 import com.jp.music.validator.FileValidator;
 
 @Configuration
 @ComponentScan({"com.jp"})
-@ImportResource(value = { "/WEB-INF/spring/spring-security.xml" })
+//@ImportResource(value = { "/WEB-INF/spring/spring-security.xml" })
 public class ApplicationContext {
 
 //	<beans:bean id="fileValidator" class="com.jp.music.validator.FileValidator" />
@@ -45,5 +50,22 @@ public class ApplicationContext {
     public static PropertySourcesPlaceholderConfigurer properties() {
         final PropertySourcesPlaceholderConfigurer pspc = new PropertySourcesPlaceholderConfigurer();
         return pspc;
+    }
+	
+	@Bean
+    public FormattingConversionService conversionService() {
+
+        // Use the DefaultFormattingConversionService but do not register defaults
+        DefaultFormattingConversionService conversionService = new DefaultFormattingConversionService(false);
+
+        // Ensure @NumberFormat is still supported
+        conversionService.addFormatterForFieldAnnotation(new NumberFormatAnnotationFormatterFactory());
+
+        // Register date conversion with a specific global format
+        DateFormatterRegistrar registrar = new DateFormatterRegistrar();
+        registrar.setFormatter(new DateFormatter("yyyyMMdd"));
+        registrar.registerFormatters(conversionService);
+
+        return conversionService;
     }
 }

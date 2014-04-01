@@ -1,4 +1,4 @@
-package com.jp.music.imports.model;
+package com.jp.music.fileimport.model;
 
 import java.util.HashMap;
 import java.util.Map;

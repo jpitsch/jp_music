@@ -28,10 +28,20 @@ import com.jp.music.album.model.Album;
 @Table(name="singers")
 public class Singer {
 	
-	public enum Sex {
+	public enum Gender {
 		MALE, FEMALE
 	}
 	
+//	private Gender gender;
+//	
+//	public Gender getGender() {
+//		return gender;
+//	}
+//
+//	public void setGender(Gender gender) {
+//		this.gender = gender;
+//	}
+
 	@Id
 	@Column(name="SINGERS_ID")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -86,12 +96,12 @@ public class Singer {
 		this.sex = sex;
 	}
 	
-	@ModelAttribute("sexList")
-	public Map<String, String> populateSexList() {
-		Map<String, String> sexList = new HashMap<String, String>();
-		for(Sex s : Sex.values()) {
-			sexList.put(s.toString(), s.toString());
+	@ModelAttribute("genderList")
+	public Map<String, String> populateGenderList() {
+		Map<String, String> genderList = new HashMap<String, String>();
+		for(Gender s : Gender.values()) {
+			genderList.put(s.toString(), s.toString());
 		}
-		return sexList;
+		return genderList;
 	}
 }

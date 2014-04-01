@@ -16,8 +16,12 @@
 			</tr>
 			<tr>
 				<td><form:label path="sex">Gender:</form:label></td>
-				<td><form:input path="sex"/></td>
-				<td><form:errors path="sex" class="error" /></td>
+				<td>
+					<form:select path="sex">
+						<form:option value="0" label="Choose Gender" />
+						<form:options items="${genderList}" />
+					</form:select>
+				</td>
 			</tr>
 			<tr>
 				<td colspan="2">
@@ -43,7 +47,7 @@
 					<td>${singer.name}</td>
 					<td>"${singer.dateOfBirth}"</td>
 					<td>${singer.sex}</td>
-					<td><a href="music/singer/delete/${singer.singerId}">delete</a></td>
+					<td><a href="/singer/delete/${singer.singerId}">delete</a></td>
 				</tr>
 			</c:forEach>
 		</table>

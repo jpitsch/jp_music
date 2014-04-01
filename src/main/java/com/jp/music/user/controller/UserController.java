@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.jp.music.common.controller.BaseController;
-import com.jp.music.service.UserService;
 import com.jp.music.user.model.User;
+import com.jp.music.user.service.UserService;
 
 @Controller
 @RequestMapping("/user")
@@ -34,7 +34,7 @@ public class UserController extends BaseController {
 		return "user/user";
 	}
 
-	@RequestMapping(value = "/create-user", method = RequestMethod.POST)
+	@RequestMapping(value = "/create", method = RequestMethod.POST)
 	public String createUser(@ModelAttribute("user") @Valid User user, BindingResult result) {
 
 		if(result.hasErrors()) {
@@ -48,7 +48,7 @@ public class UserController extends BaseController {
 		return "redirect:/user/";
 	}
 
-	@RequestMapping(value = "/delete-user/{id}")
+	@RequestMapping(value = "/delete/{id}")
 	public String deleteUser(@PathVariable("id") Integer id) {
 		userService.deleteUser(id);
 

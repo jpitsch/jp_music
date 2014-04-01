@@ -15,6 +15,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import com.jp.music.common.model.Role;
+import com.jp.music.common.model.SocialMediaType;
 
 @Entity
 @Table(name="users")
@@ -36,6 +37,9 @@ public class User implements UserDetails {
 	@Column(name="ROLE")
 	public Role role;
 	
+	@Column(name="SOCIAL_MEDIA_LOGIN")
+	public SocialMediaType socialMediaLogin;
+	
 	public User() {
 		
 	}
@@ -46,6 +50,22 @@ public class User implements UserDetails {
 
 	public void setUserId(Integer userId) {
 		this.userId = userId;
+	}
+
+	public Role getRole() {
+		return role;
+	}
+
+	public void setRole(Role role) {
+		this.role = role;
+	}
+
+	public SocialMediaType getSocialMediaLogin() {
+		return socialMediaLogin;
+	}
+
+	public void setSocialMediaLogin(SocialMediaType socialMediaLogin) {
+		this.socialMediaLogin = socialMediaLogin;
 	}
 
 	@Override

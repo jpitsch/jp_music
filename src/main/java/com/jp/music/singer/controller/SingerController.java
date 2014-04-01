@@ -24,8 +24,8 @@ public class SingerController extends BaseController {
 	SingerService singerService;
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String getSingerCreateForm(Map<String, Object> map) {
-		map.put("singer", new Singer());
+	public String getSingerCreateForm(@ModelAttribute("singer") Singer singer, Map<String, Object> map) {
+		//map.put("singer", new Singer());
 		map.put("singersList", singerService.findAllSingers());
 		
 		return "singer/singer";

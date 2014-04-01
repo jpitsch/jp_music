@@ -1,4 +1,4 @@
-package com.jp.music.service;
+package com.jp.music.user.service;
 
 import java.util.List;
 
