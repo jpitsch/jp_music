@@ -1,6 +1,5 @@
 package com.jp.music.security.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
@@ -10,8 +9,11 @@ import com.jp.music.user.service.UserService;
 
 public class LoginUserDetailsService implements UserDetailsService {
 
-	@Autowired
 	private UserService userService;
+	
+	public LoginUserDetailsService(UserService userService) {
+		this.userService = userService;
+	}
 	
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {

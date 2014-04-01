@@ -12,8 +12,9 @@ projects that I have in mind.
 
 Future Features:
 ================
-These features are in no order of importance
+These features are in no order of importance unless otherwise stated.
 
+- Unit Testing (Most important!!!)
 - Replace Hibernate with Spring Data. (Experimental)
 - Convert the XML config files with Annotation based config (Mostly complete minus Spring Security which I am still working on).
 - Convert project to Spring 4.0 and Spring Security 3.2 along with moving Maven to the latest (This has been finished).

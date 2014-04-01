@@ -19,7 +19,7 @@ public class UserDaoImpl extends GenericDaoImpl<User, String> implements UserDao
     }
  
     @Override
-    public User findUserByName(String userName) {
-        return findByCriteria(Restrictions.like("userName", userName, MatchMode.START));
+    public User findUserByName(String username) {
+        return findByCriteria(Restrictions.like("username", username, MatchMode.START));
     }
 }

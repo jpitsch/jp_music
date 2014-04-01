@@ -1,7 +1,5 @@
 package com.jp.music.user.model;
 
-import java.util.Collection;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,15 +9,13 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
-
+import com.jp.music.common.model.BaseEntity;
 import com.jp.music.common.model.Role;
 import com.jp.music.common.model.SocialMediaType;
 
 @Entity
 @Table(name="users")
-public class User implements UserDetails {
+public class User extends BaseEntity {
 	
 	@Id
 	@Column(name="USERS_ID")
@@ -52,6 +48,22 @@ public class User implements UserDetails {
 		this.userId = userId;
 	}
 
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
 	public Role getRole() {
 		return role;
 	}
@@ -67,55 +79,4 @@ public class User implements UserDetails {
 	public void setSocialMediaLogin(SocialMediaType socialMediaLogin) {
 		this.socialMediaLogin = socialMediaLogin;
 	}
-
-	@Override
-	public Collection<? extends GrantedAuthority> getAuthorities() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public String getPassword() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	@Override
-	public String getUsername() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public void setUsername(String username) {
-		this.username = username;
-	}
-
-	@Override
-	public boolean isAccountNonExpired() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean isAccountNonLocked() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean isCredentialsNonExpired() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean isEnabled() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-	
 }
